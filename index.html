@@ -1,205 +1,302 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مشروع مدينة المستقبل</title>
-    <style>
-        body {
-            font-family: 'Tahoma', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مشروع مدينة المستقبل</title>
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      transition: all 0.3s ease;
+    }
 
-        header {
-            background-color: #008080;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+    header {
+      background-color: #008080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
 
-        .project-main {
-            width: 100%;
-            max-width: 600px;  /* أقصى عرض معقول */
-            height: auto;
-            display: block;
-            margin: 20px auto; /* توسيط الصورة */
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+    #lang-toggle {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      background-color: white;
+      color: #008080;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
 
-        section {
-            padding: 20px;
-            margin: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+    #lang-toggle:hover {
+      background-color: #e0e0e0;
+    }
 
-        h2 {
-            color: #008080;
-        }
+    .project-main {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
 
-        ul {
-            list-style: square;
-            padding-right: 20px;
-        }
+    section {
+      padding: 20px;
+      margin: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
 
-        .images {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
+    h2 {
+      color: #008080;
+    }
 
-        .images img {
-            width: 300px;
-            height: auto;
-            border-radius: 8px;
-        }
+    ul {
+      list-style: square;
+      padding-right: 20px;
+    }
 
-        .point {
-            margin-bottom: 30px;
-        }
+    .point {
+      margin-bottom: 30px;
+    }
 
-        .point h3 {
-            color: #333;
-            border-bottom: 2px solid #008080;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
-        }
+    .point h3 {
+      color: #333;
+      border-bottom: 2px solid #008080;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+    }
 
-        .point-image {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 10px;
-            display: block;
-            margin: 0 auto;
-        }
+    .point-image {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+    }
 
-        .team {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
 
-        .member {
-            text-align: center;
-            width: 160px;
-        }
+    .member {
+      text-align: center;
+      width: 160px;
+    }
 
-        .member img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 2px solid #008080;
-        }
+    .member img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #008080;
+    }
 
-        footer {
-            background-color: #008080;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-    </style>
+    footer {
+      background-color: #008080;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- الهيدر أولاً -->
-    <header>
-        <h1>مشروع أنسنة المدن</h1>
-    </header>
+  <!-- الهيدر مع زر اللغة -->
+  <header>
+    <button id="lang-toggle">English</button>
+    <h1 id="title">مشروع أنسنة المدن</h1>
+  </header>
 
-    <!-- صورة المشروع (رئيسية) -->
-    <img src="product.jpg" alt="صورة مدينة المستقبل" class="project-main">
+  <img src="product.jpg" alt="صورة مدينة المستقبل" class="project-main">
 
-    <!-- باقي أقسام الصفحة -->
-    <section>
-        <h2>وصف المشروع</h2>
-        <p>
-            المشروع عبارة عن مدينة مستقبلية صغيرة مصممة لتكون صديقة للبيئة وتوفر أسلوب حياة مريح ومستدام. تحتوي المدينة على مدرستين وسوبرماركت مركزي يخدم السكان، بالإضافة إلى مجموعة من المنازل الحديثة.<br><br>
-            تم تصميم تخطيط المدينة بحيث تكون جميع المرافق قريبة من البيوت، مما يجعل التنقل إليها ممكنًا باستخدام الدراجات الهوائية أو المشي فقط، دون الحاجة إلى السيارات. هذا يقلل من التلوث ويجعل المدينة أكثر هدوءًا وصحية.<br><br>
-            كما تم الاهتمام بـ تخطيط البيوت والشوارع بحيث يسمح بمرور الهواء بين المنازل، مما يقلل من الحاجة إلى أجهزة التبريد. كل بيت يحتوي على فتحات لدخول وخروج الهواء لتجديده باستمرار داخل المنزل وتبريده بشكل طبيعي.<br><br>
-            أما من ناحية الطاقة، فقد تم تركيب ألواح شمسية على أسطح المنازل لتوليد الكهرباء النظيفة من أشعة الشمس، مما يجعل المدينة تعتمد على الطاقة المتجددة بشكل كامل. بالإضافة إلى ذلك، تم استخدام بلاطات خاصة بتقنية **البيزوالكترك (Piezoelectric)** في الأرصفة والشوارع التي يمشي عليها الناس، حيث تقوم بتحويل ضغط خطوات المشاة إلى طاقة كهربائية يمكن استخدامها في تشغيل إنارة الشوارع وإشارات المرور.<br><br>
-            المدينة ليست فقط مكانًا للعيش، بل نموذج لمستقبل يعتمد على التصميم الذكي، الطاقة النظيفة، والحياة الصحية.
-        </p>
-    </section>
+  <section>
+    <h2 id="desc-title">وصف المشروع</h2>
+    <p id="desc-text">
+      المشروع عبارة عن مدينة مستقبلية صغيرة مصممة لتكون صديقة للبيئة وتوفر أسلوب حياة مريح ومستدام. تحتوي المدينة على مدرستين وسوبرماركت مركزي يخدم السكان، بالإضافة إلى مجموعة من المنازل الحديثة.<br><br>
+      تم تصميم تخطيط المدينة بحيث تكون جميع المرافق قريبة من البيوت، مما يجعل التنقل إليها ممكنًا باستخدام الدراجات الهوائية أو المشي فقط، دون الحاجة إلى السيارات. هذا يقلل من التلوث ويجعل المدينة أكثر هدوءًا وصحية.<br><br>
+      كما تم الاهتمام بـ تخطيط البيوت والشوارع بحيث يسمح بمرور الهواء بين المنازل، مما يقلل من الحاجة إلى أجهزة التبريد. كل بيت يحتوي على فتحات لدخول وخروج الهواء لتجديده باستمرار داخل المنزل وتبريده بشكل طبيعي.<br><br>
+      أما من ناحية الطاقة، فقد تم تركيب ألواح شمسية على أسطح المنازل لتوليد الكهرباء النظيفة من أشعة الشمس، مما يجعل المدينة تعتمد على الطاقة المتجددة بشكل كامل. بالإضافة إلى ذلك، تم استخدام بلاطات خاصة بتقنية <b>البيزوالكترك (Piezoelectric)</b> في الأرصفة والشوارع التي يمشي عليها الناس، حيث تقوم بتحويل ضغط خطوات المشاة إلى طاقة كهربائية يمكن استخدامها في تشغيل إنارة الشوارع وإشارات المرور.<br><br>
+      المدينة ليست فقط مكانًا للعيش، بل نموذج لمستقبل يعتمد على التصميم الذكي، الطاقة النظيفة، والحياة الصحية.
+    </p>
+  </section>
 
-    <section>
-        <h2>مميزات المشروع</h2>
-        <ul>
-            <li>الاعتماد على الطاقة المتجددة</li>
-            <li>مواصلات ذكية وبدون انبعاثات</li>
-            <li>مباني ذكية وصديقة للبيئة</li>
-        </ul>
-    </section>
+  <section>
+    <h2 id="features-title">مميزات المشروع</h2>
+    <ul id="features-list">
+      <li>الاعتماد على الطاقة المتجددة</li>
+      <li>مواصلات ذكية وبدون انبعاثات</li>
+      <li>مباني ذكية وصديقة للبيئة</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>فوائد المشروع</h2>
-        <ul>
-            <li>تحسين جودة الحياة</li>
-            <li>الحفاظ على البيئة</li>
-            <li>تقليل التلوث والضوضاء</li>
-            <li>تشجيع الابتكار والتكنولوجيا</li>
-        </ul>
-    </section>
+  <section>
+    <h2 id="benefits-title">فوائد المشروع</h2>
+    <ul id="benefits-list">
+      <li>تحسين جودة الحياة</li>
+      <li>الحفاظ على البيئة</li>
+      <li>تقليل التلوث والضوضاء</li>
+      <li>تشجيع الابتكار والتكنولوجيا</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>أهم النقاط في المشروع</h2>
+  <section>
+    <h2 id="points-title">أهم النقاط في المشروع</h2>
 
-        <div class="point">
-            <h3>1. تصميم ثلاثي الأبعاد واقعي</h3>
-            <img src="product.jpg" alt="تصميم ثلاثي الأبعاد" class="point-image">
-        </div>
+    <div class="point">
+      <h3 id="p1-title">1. تصميم ثلاثي الأبعاد واقعي</h3>
+      <img src="product.jpg" alt="تصميم ثلاثي الأبعاد" class="point-image">
+    </div>
 
-        <div class="point">
-            <h3>2. محاكاة حركة المرور الذكية</h3>
-            <img src="123.jpg" alt="حركة المرور الذكية" class="point-image">
-        </div>
+    <div class="point">
+      <h3 id="p2-title">2. محاكاة حركة المرور الذكية</h3>
+      <img src="123.jpg" alt="حركة المرور الذكية" class="point-image">
+    </div>
 
-        <div class="point">
-            <h3>3. نظام إضاءة يعمل بالطاقة الشمسية</h3>
-            <img src="souler.jpg" alt="الإضاءة بالطاقة الشمسية" class="point-image">
-        </div>
+    <div class="point">
+      <h3 id="p3-title">3. نظام إضاءة يعمل بالطاقة الشمسية</h3>
+      <img src="souler.jpg" alt="الإضاءة بالطاقة الشمسية" class="point-image">
+    </div>
 
-        <div class="point">
-            <h3>4. استخدام بلاطات خاصة لتوليد الكهرباء عند المشي عليها (Piezoelectric)</h3>
-            <img src="none.jpg" alt="تقنية البيزوالكترك" class="point-image">
-        </div>
-    </section>
+    <div class="point">
+      <h3 id="p4-title">4. استخدام بلاطات خاصة لتوليد الكهرباء عند المشي عليها (Piezoelectric)</h3>
+      <img src="none.jpg" alt="تقنية البيزوالكترك" class="point-image">
+    </div>
+  </section>
 
-    <section>
-        <h2>فريق العمل</h2>
-        <div class="team">
-            <div class="member">
-                <img src="said.jpg" alt="عضو الفريق 1">
-                <p>سعيد حمد</p>
-            </div>
-            <div class="member">
-                <img src="khaled.jpg" alt="عضو الفريق 2">
-                <p>محمد خالد</p>
-            </div>
-            <div class="member">
-                <img src="students.jpg" alt="عضو الفريق 3">
-                <p>حمد النعيمي</p>
-            </div>
-            <div class="member">
-                <img src="students.jpg" alt="عضو الفريق 4">
-                <p>محمد محمود</p>
-            </div>
-            <div class="member">
-                <img src="students.jpg" alt="عضو الفريق 5">
-                <p>عزيز غريب</p>
-            </div>
-        </div>
-    </section>
+  <section>
+    <h2 id="team-title">فريق العمل</h2>
+    <div class="team">
+      <div class="member">
+        <img src="said.jpg" alt="عضو الفريق 1">
+        <p id="m1">سعيد حمد</p>
+      </div>
+      <div class="member">
+        <img src="khaled.jpg" alt="عضو الفريق 2">
+        <p id="m2">محمد خالد</p>
+      </div>
+      <div class="member">
+        <img src="students.jpg" alt="عضو الفريق 3">
+        <p id="m3">حمد النعيمي</p>
+      </div>
+      <div class="member">
+        <img src="students.jpg" alt="عضو الفريق 4">
+        <p id="m4">محمد محمود</p>
+      </div>
+      <div class="member">
+        <img src="students.jpg" alt="عضو الفريق 5">
+        <p id="m5">عزيز غريب</p>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        &copy; 2025 - مشروع مدينة المستقبل | مدرسة المستقبل
-    </footer>
+  <footer id="footer">
+    &copy; 2025 - مشروع مدينة المستقبل | مدرسة المستقبل
+  </footer>
 
+  <script>
+    const langBtn = document.getElementById('lang-toggle');
+    let lang = 'ar';
+
+    langBtn.addEventListener('click', () => {
+      if (lang === 'ar') {
+        document.documentElement.lang = 'en';
+        document.documentElement.dir = 'ltr';
+        langBtn.textContent = 'العربية';
+        lang = 'en';
+
+        document.getElementById('title').textContent = 'Future City Project';
+        document.getElementById('desc-title').textContent = 'Project Description';
+        document.getElementById('desc-text').innerHTML = `
+          The project is a small futuristic city designed to be eco-friendly and provide a comfortable and sustainable lifestyle. 
+          The city includes two schools and a central supermarket serving the residents, along with a group of modern houses.<br><br>
+          The layout is designed so that all facilities are within walking or cycling distance, eliminating the need for cars. 
+          This reduces pollution and makes the city quieter and healthier.<br><br>
+          Houses and streets are arranged to allow natural airflow, reducing the need for air conditioners. 
+          Each home has openings for air circulation, keeping it cool naturally.<br><br>
+          Solar panels are installed on rooftops to generate clean electricity from sunlight, 
+          making the city fully dependent on renewable energy. 
+          In addition, special <b>Piezoelectric</b> tiles are used on sidewalks and streets to convert footsteps into electricity for powering streetlights and signals.<br><br>
+          The city is not only a place to live but a model for a smarter, cleaner, and healthier future.
+        `;
+
+        document.getElementById('features-title').textContent = 'Project Features';
+        document.getElementById('features-list').innerHTML = `
+          <li>Dependence on renewable energy</li>
+          <li>Smart and emission-free transportation</li>
+          <li>Eco-friendly smart buildings</li>
+        `;
+
+        document.getElementById('benefits-title').textContent = 'Project Benefits';
+        document.getElementById('benefits-list').innerHTML = `
+          <li>Improving quality of life</li>
+          <li>Environmental preservation</li>
+          <li>Reducing pollution and noise</li>
+          <li>Encouraging innovation and technology</li>
+        `;
+
+        document.getElementById('points-title').textContent = 'Main Highlights';
+        document.getElementById('p1-title').textContent = '1. Realistic 3D Design';
+        document.getElementById('p2-title').textContent = '2. Smart Traffic Simulation';
+        document.getElementById('p3-title').textContent = '3. Solar-Powered Lighting System';
+        document.getElementById('p4-title').textContent = '4. Piezoelectric Tiles for Energy Generation';
+
+        document.getElementById('team-title').textContent = 'Team Members';
+        document.getElementById('footer').textContent = '© 2025 - Future City Project | Future School';
+      } else {
+        document.documentElement.lang = 'ar';
+        document.documentElement.dir = 'rtl';
+        langBtn.textContent = 'English';
+        lang = 'ar';
+
+        document.getElementById('title').textContent = 'مشروع أنسنة المدن';
+        document.getElementById('desc-title').textContent = 'وصف المشروع';
+        document.getElementById('desc-text').innerHTML = `
+          المشروع عبارة عن مدينة مستقبلية صغيرة مصممة لتكون صديقة للبيئة وتوفر أسلوب حياة مريح ومستدام. تحتوي المدينة على مدرستين وسوبرماركت مركزي يخدم السكان، بالإضافة إلى مجموعة من المنازل الحديثة.<br><br>
+          تم تصميم تخطيط المدينة بحيث تكون جميع المرافق قريبة من البيوت، مما يجعل التنقل إليها ممكنًا باستخدام الدراجات الهوائية أو المشي فقط، دون الحاجة إلى السيارات. هذا يقلل من التلوث ويجعل المدينة أكثر هدوءًا وصحية.<br><br>
+          كما تم الاهتمام بـ تخطيط البيوت والشوارع بحيث يسمح بمرور الهواء بين المنازل، مما يقلل من الحاجة إلى أجهزة التبريد. كل بيت يحتوي على فتحات لدخول وخروج الهواء لتجديده باستمرار داخل المنزل وتبريده بشكل طبيعي.<br><br>
+          أما من ناحية الطاقة، فقد تم تركيب ألواح شمسية على أسطح المنازل لتوليد الكهرباء النظيفة من أشعة الشمس، مما يجعل المدينة تعتمد على الطاقة المتجددة بشكل كامل. بالإضافة إلى ذلك، تم استخدام بلاطات خاصة بتقنية <b>البيزوالكترك (Piezoelectric)</b> في الأرصفة والشوارع التي يمشي عليها الناس، حيث تقوم بتحويل ضغط خطوات المشاة إلى طاقة كهربائية يمكن استخدامها في تشغيل إنارة الشوارع وإشارات المرور.<br><br>
+          المدينة ليست فقط مكانًا للعيش، بل نموذج لمستقبل يعتمد على التصميم الذكي، الطاقة النظيفة، والحياة الصحية.
+        `;
+
+        document.getElementById('features-title').textContent = 'مميزات المشروع';
+        document.getElementById('features-list').innerHTML = `
+          <li>الاعتماد على الطاقة المتجددة</li>
+          <li>مواصلات ذكية وبدون انبعاثات</li>
+          <li>مباني ذكية وصديقة للبيئة</li>
+        `;
+
+        document.getElementById('benefits-title').textContent = 'فوائد المشروع';
+        document.getElementById('benefits-list').innerHTML = `
+          <li>تحسين جودة الحياة</li>
+          <li>الحفاظ على البيئة</li>
+          <li>تقليل التلوث والضوضاء</li>
+          <li>تشجيع الابتكار والتكنولوجيا</li>
+        `;
+
+        document.getElementById('points-title').textContent = 'أهم النقاط في المشروع';
+        document.getElementById('p1-title').textContent = '1. تصميم ثلاثي الأبعاد واقعي';
+        document.getElementById('p2-title').textContent = '2. محاكاة حركة المرور الذكية';
+        document.getElementById('p3-title').textContent = '3. نظام إضاءة يعمل بالطاقة الشمسية';
+        document.getElementById('p4-title').textContent = '4. استخدام بلاطات خاصة لتوليد الكهرباء عند المشي عليها (Piezoelectric)';
+
+        document.getElementById('team-title').textContent = 'فريق العمل';
+        document.getElementById('footer').textContent = '© 2025 - مشروع مدينة المستقبل | مدرسة المستقبل';
+      }
+    });
+  </script>
 </body>
 </html>
